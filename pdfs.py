@@ -52,7 +52,7 @@ def main():
         links = item_data.get("links", {})
         for link_key, partial_url in links.items():
             safe_link_key = link_key.replace(" ", "_").replace("-", "_")
-            directory = os.path.join("Data", item_id)
+            directory = os.path.join("Files", item_id)
             filename = f"{safe_link_key}.pdf"
             if f"{directory}_{filename}" not in downloaded_files:
                 download_tasks.append((partial_url, directory, filename))
